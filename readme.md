@@ -46,4 +46,31 @@ On your repository page, find "New pull request" button.
 
 More at https://help.github.com/articles/creating-a-pull-request/
 
+What can go wrong?
+==================
 
+It may happen, that after you have forked the repository, someone already added files to it, and your commit may introduce a conflict.
+
+To resolve this, you need first to sync your forked repository with the upstream.
+
+So, first add upstream.
+
+```
+git remote add upstream https://github.com/osdevnet/test_assignment
+```
+
+check it's there
+
+```
+git remote -v
+```
+
+fetch the upstream changes.
+
+```
+git fetch upstream
+git checkout master
+git merge upstream/master
+```
+
+now you can push.
